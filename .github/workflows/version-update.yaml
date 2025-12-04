@@ -22,7 +22,7 @@ jobs:
 
       - name: Get next version
         uses: reecetech/version-increment@2024.10.1
-        id: 0.0.1
+        id: version
         with:
           scheme: semver
           increment: patch
