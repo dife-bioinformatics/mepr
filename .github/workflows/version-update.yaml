@@ -20,19 +20,12 @@ jobs:
           extra-packages: any::desc
           needs: check
 
-      - name: Retrieve current version number
-        run: |
-          desc::desc_get_version()
-        shell: Rscript {0}
-        value: ${{ steps.run.outputs.out }}
-
       - name: Get next version
         uses: reecetech/version-increment@2024.10.1
-        id: ${{ steps.run.outputs.out }}
+        id: 0.0.1
         with:
           scheme: semver
           increment: patch
-
 
 
       - name: Update Description file
