@@ -1,6 +1,6 @@
 Package: AnalysisMEP
 Title: Creates standardised Analysis Project Setup in R
-Version: 0.0.0.9001
+Version: 0.0.1
 Authors@R: 
     c(person(given = "Florian", 
              family = "Schwarz",
@@ -16,9 +16,9 @@ Authors@R:
              role = "aut",
              email = "Olga.Kuxhaus@dife.de"))
 Description: This package is made for internal use within the MEP department of
-    the German Institute of Human Nutrition Potsdam-Rehbruecke. It contains functions
-    for a standardised setup of R projects for research analyses as well as
-    some functions often used.
+    the German Institute of Human Nutrition Potsdam-Rehbruecke. It contains 
+    functions for a standardised setup of R projects for research analyses as 
+    well as some functions often used.
 License: GPL (>= 3)
 Depends:
     R (>= 4.1)
