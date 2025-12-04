@@ -1,3 +1,6 @@
 ^AnalysisMEP\.Rproj$
 ^\.Rproj\.user$
-^.IdeasForFunctions$
+^IdeasForFunctions$
+^LICENSE\.md$
+^\.github$
+^\.git$

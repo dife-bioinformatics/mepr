@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          # Test the package on Linux OS and latest R Versions
+          # Test the package on Linux OS, latest R and current server R version
           - {os: ubuntu-latest,   r: 'release'}
           - {os: ubuntu-latest,   r: '4.3.0'}
           - {os: windows-latest,   r: 'release'}

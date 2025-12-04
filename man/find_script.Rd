@@ -4,7 +4,7 @@
 \alias{find_script}
 \title{Internal Function for pathing of the building blocks for the template}
 \usage{
-find_script(script_name, package = "RAnalysisMEP")
+find_script(script_name, package = "AnalysisMEP")
 }
 \arguments{
 \item{script_name}{specifies which script is called.}

@@ -19,14 +19,13 @@ Description: This package is made for internal use within the MEP department of
     the German Institute of Human Nutrition Potsdam-Rehbruecke. It contains functions
     for a standardised setup of R projects for research analyses as well as
     some functions often used.
-License: Copyright {2025} {German Institute of Human Nutrition Potsdam-Rehbruecke}
+License: GPL (>= 3)
 Depends:
     R (>= 4.1)
 Imports:
     renv,
     usethis,
-    fs,
-    here
+    fs
 Encoding: UTF-8
 Roxygen: list(markdown = FALSE)
 RoxygenNote: 7.3.3
