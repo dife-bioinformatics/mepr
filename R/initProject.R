@@ -18,7 +18,8 @@ initProject <- function(location = NULL){
 
   #### sets up normal R Project
   usethis::create_project(location,
-                          open = FALSE)
+                          open = FALSE,
+                          rstudio = TRUE)
 
   #### creates additional folder structure
   dir.create(paste0(location, "/data"))
@@ -91,7 +92,8 @@ initProject <- function(location = NULL){
   usethis::write_over(path = paste0(location, "/.Rprofile"),
                       lines = r_profile_lines)
 
-  renv::init(project = location)
+  renv::init(project = location,
+             load = FALSE)
 
 
 }
