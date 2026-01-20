@@ -37,7 +37,7 @@ jobs:
         uses: tj-actions/verify-changed-files@a1c6acee9df209257a246f2cc6ae8cb6581c1edf # v20
         id: verify-changed-files
         with:
-          files: maelstrom_taxonomies
+          files: DESCRIPTION
 
       - name: Commit files
         if: steps.verify-changed-files.outputs.files_changed == 'true'
