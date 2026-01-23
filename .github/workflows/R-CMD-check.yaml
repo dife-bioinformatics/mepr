@@ -7,8 +7,6 @@ on:
     - cron: '15 7 * * 1'
   pull_request:
     branches: [main, dev]
-  push:
-    branches: [dev]
 
 jobs:
   R-CMD-check:
@@ -20,7 +18,7 @@ jobs:
       matrix:
         config:
           - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-18.04,   r: '4.3.0'}
+          - {os: ubuntu-latest,   r: '4.3.0'}
           - {os: windows-latest,   r: 'release'}
 
     env:
