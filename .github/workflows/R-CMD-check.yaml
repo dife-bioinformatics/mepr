@@ -20,7 +20,7 @@ jobs:
       matrix:
         config:
           - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-18.04,   r: '4.3.0'}
+          - {os: ubuntu-latest,   r: '4.3.0'}
           - {os: windows-latest,   r: 'release'}
 
     env:
