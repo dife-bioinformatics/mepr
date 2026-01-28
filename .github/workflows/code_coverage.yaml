@@ -4,10 +4,12 @@ name: Code Coverage
 
 on:
   pull_request:
-    branches: [main, dev]
+    branches: [dev]
+    types: [closed]
 
 jobs:
   Badges:
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,8 +43,8 @@ jobs:
       - name: Commit files
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "Florian.Schwarz@dife.de"
+          git config --local user.name "FlorianSchw"
           git add --all
           git commit -am "chore: updating test coverage"
           git push

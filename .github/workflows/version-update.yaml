@@ -41,8 +41,8 @@ jobs:
       - name: Commit files
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "Florian.Schwarz@dife.de"
+          git config --local user.name "FlorianSchw"
           git add --all
           git commit -am "chore: Updated package version"
           git push
@@ -57,3 +57,9 @@ jobs:
           tag: ${{ steps.version.outputs.version }}
 
 
+      - name: Create PR
+        uses: poorva17/create-pr-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: main
+          BASE_BRANCH: dev
