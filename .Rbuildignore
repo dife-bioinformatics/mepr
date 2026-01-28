@@ -1,8 +1,8 @@
+^renv$
+^renv\.lock$
 ^AnalysisMEP\.Rproj$
 ^\.Rproj\.user$
-^IdeasForFunctions$
 ^LICENSE\.md$
 ^\.github$
 ^\.git$
-^FunctionSnippets$
 ^status$
