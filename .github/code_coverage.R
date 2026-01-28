@@ -1,6 +1,6 @@
 
 library(badgen)
-library(tidyverse)
+library(dplyr)
 
 coverage_functions_detailed <- as.data.frame(covr::package_coverage())
 
@@ -38,3 +38,16 @@ for(k in 1:length(all_metrics$name)){
   writeLines(svg_test, here::here("status/badges", paste0(all_metrics$name[k], "_badge.svg")))
 
 }
+
+
+
+svg_test <- badgen(label = "Last Check",
+                   status = as.character(as.Date(Sys.time())),
+                   color = "blue",
+                   style = "flat")
+
+writeLines(svg_test, here::here("status/badges", "check_lasttest_badge.svg"))
+
+
+
+
