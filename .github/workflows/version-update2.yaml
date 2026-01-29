@@ -16,7 +16,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.MEP_Package_Update }}
-          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -30,6 +29,6 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.MEP_Package_Update }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
