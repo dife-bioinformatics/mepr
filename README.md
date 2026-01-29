@@ -20,11 +20,11 @@ Some text for users
 <details>
 <summary>For developers</summary>
 
-### Information
+## Information
 Before you start, contact Florian / Fabian / Olga.
 Some more instructions...
 
-### Test-Status of functions
+## Test-Status of functions
 
 <details>
 <summary>Test-Coverage</summary>
