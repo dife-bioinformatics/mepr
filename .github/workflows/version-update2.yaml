@@ -16,6 +16,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.MEP_Package_Update }}
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -25,9 +26,7 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Install more dependencies
-        run: npm install @semantic-release/git @semantic-release/changelog -D
-      - name: Install more dependencies
-        run: npm install @semantic-release/exec -D
+        run: npm install @semantic-release/git @semantic-release/changelog @semantic-release/exec -D
 
       - name: Release
         env:
