@@ -8,6 +8,11 @@
 <details>
 <summary>For users</summary>
 
+## Installation
+Some text for users
+
+
+## Usage
 Some text for users
 
 </details>
