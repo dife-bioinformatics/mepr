@@ -1,5 +1,3 @@
-#### just something12
+#### just something file to test trigger semantic-release workflow action
 
-3
 
-https://mobiuscode.dev/posts/Automatic-Semantic-Versioning-for-GitLab-Projects/
