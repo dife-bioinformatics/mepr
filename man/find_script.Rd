@@ -2,24 +2,24 @@
 % Please edit documentation in R/find_script.R
 \name{find_script}
 \alias{find_script}
-\title{Internal Function for pathing of the building blocks for the template}
+\title{Internal Function for pathing of the standardised files and scripts}
 \usage{
 find_script(script_name, package = "AnalysisMEP")
 }
 \arguments{
 \item{script_name}{specifies which script is called.}
 
-\item{package}{is the name of the package where the buildingblocks are included ("RAnalysisMEP").}
+\item{package}{is the name of the package where the scripts are included ("AnalysisMEP").}
 }
 \value{
 the path of the script_name
 }
 \description{
-This is an internal function which will find the correct path for the buildingblocks.
+This is an internal function which will find the correct path for the scripts during project setup after installation.
 }
 \details{
 This function adapts the code from the internal function find_template from the `usethis::use_template` function.
 }
 \author{
-Florian Schwarz for the German Institute of Human Nutrition
+Florian Schwarz
 }

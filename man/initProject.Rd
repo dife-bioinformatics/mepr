@@ -4,20 +4,27 @@
 \alias{initProject}
 \title{Function to initiate a new project}
 \usage{
-initProject(location = NULL)
+initProject(path = "home", name = NULL)
 }
 \arguments{
-\item{location}{specifies the location where the project shall be created}
+\item{path}{defaults to "home". The function uses the `fs::path_expand()` functionality to find the path
+to the home directory using the tilde expression. When this argument is changed, it
+should be replaced with an absolute path.}
+
+\item{name}{name of the new R project (and folder)}
 }
 \value{
-the location of the script_name
+A new project will be set up at the specified location (path + name) by the user.
 }
 \description{
-The function will create a new DataSHIELD analysis project environment
+The function will create a new analysis project with pre-specified folders and files
 }
 \details{
-This function adaptssome things.
+The function initiates folders and files that demonstrate good practise, such as R folder with R files
+in them. Furthermore, for the data, data-raw, results/figures and results/tables folders dummy files have been added
+to keep the folder structure when collaborating with others on GitHub because those folders have otherwise been set to
+be ignored by git (see .gitignore file). In the README.md file a very brief description of the project should be provided.
 }
 \author{
-Florian Schwarz for the German Institute of Human Nutrition
+Florian Schwarz
 }
