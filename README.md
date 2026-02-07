@@ -9,11 +9,37 @@
 <summary>For users</summary>
 
 ## Installation
-Some text for users
 
+You can install the latest, stable version of AnalysisMEP from GitHub using the remotes package:
+
+
+``` r
+remotes::install_github("dife-bioinformatics/AnalysisMEP")
+```
+
+You can also specify a specific version of the package
+
+``` r
+# Install v1.0.0 with the following
+remotes::install_github("dife-bioinformatics/AnalysisMEP@1.0.0")
+```
+
+## About
+
+The primary purpose of the R package AnalysisMEP is to provide researchers within the MEP department
+with a standardised R project organisation, thereby improving readability and support. Secondly, common 
+functions will be added over time that occur frequently in research projects.
 
 ## Usage
-Some text for users
+
+To create a new project simply execute the following code. Please note that the project will be set up
+relative to the home directory. If you want to set it up at a different location you should either
+modify the path argument or include pathing as well in the name argument.
+
+``` r
+AnalysisMEP::init_project(name = "project-XYZ", path = "home")
+```
+
 
 </details>
 
@@ -119,7 +145,7 @@ creates the batch, and re-writes the README.md file in case there were newly add
 - What: initiates semantic-release workflow defined in the .releaserc.json file (analyses commits since last release,
 identifies new package version depending on the changes, updates the package version in the DESCRIPTION file, prepares
 release notes, creates a draft release)
-- Why: structured way of increasing version releases from established communites
+- Why: structured way of increasing version releases from established communities
 - Why: way too cumbersome to go through all the commits to see what has happened since last release
 - Why: not automatically releasing in order to do some manual edits on release-notes
 - Necessitates: using a consistent (currently: angular) commit message structure!!
