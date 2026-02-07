@@ -2,9 +2,10 @@
 
 test_that("project setup structure", {
 
-  tmp_path_to_proj <- AnalysisMEP::initProject(location = fs::file_temp(pattern = "testproj"))
-  tmp_path <- tail(stringr::str_split(string = tmp_path_to_proj,
-                                      pattern = "/")[[1]], n = 1)
+  #### Testing that all top-level folders and files are created as expected
+  test_name <- "testproj-123"
+  tmp_path <- fs::path_temp()
+  tmp_path_to_proj <- AnalysisMEP::initProject(path = tmp_path, name = test_name)
 
   file_structure_top <- fs::dir_ls(path = tmp_path_to_proj,
                                    all = TRUE)
@@ -16,19 +17,54 @@ test_that("project setup structure", {
                        "data",
                        "data-raw",
                        "R",
+                       "README.md",
                        "renv",
                        "renv.lock",
                        "results",
-                       paste0(tmp_path, ".Rproj"))
+                       paste0(test_name, ".Rproj"))
 
   expected_paths <- paste0(tmp_path_to_proj, "/", expect_elements)
-
 
   testthat::expect_setequal(file_structure_top,
                             expected_paths)
 
 
+  #### Testing whether important elements exist in the .gitignore file
+  gitignore_lines_expected <- c(".Renviron",
+                                "data/*",
+                                "!data/placeholder.txt",
+                                "data-raw/*",
+                                "!data-raw/placeholder.txt",
+                                "results/plots/*",
+                                "!results/plots/placeholder.txt",
+                                "results/tables/*",
+                                "!results/tables/placeholder.txt")
+
+  gitignore_lines_created <- readLines(con = paste0(tmp_path_to_proj, "/", ".gitignore"))
+
+  testthat::expect_true(all(gitignore_lines_expected %in% gitignore_lines_created))
+
+
+  #### Testing whether the function stops when no name has been provided
+  error_message <- testthat::expect_error(AnalysisMEP::initProject(path = tmp_path))
+
+  #### Testing that the error message is consistent
+  testthat::expect_equal(error_message$message,
+                         paste0("Please provide a path name for the project to be created."))
+
+
+  #### Testing whether the function stops when it would overwrite a folder directory
+  error_message2 <- testthat::expect_error(AnalysisMEP::initProject(path = tmp_path, name = test_name))
+
+  #### Testing that the error message is consistent
+  testthat::expect_equal(error_message2$message,
+                         paste0("The path and name you have provided would overwrite an existing directory (", tmp_path_to_proj , "). Setup aborted."))
+
 
 })
+
+
+
+
 
 
