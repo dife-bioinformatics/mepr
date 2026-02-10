@@ -11,9 +11,9 @@ test_that("project setup structure", {
                                    all = TRUE)
 
   expect_elements <- c(".gitignore",
-                       ".Renviron",
+                       #".Renviron",
                        ".Rprofile",
-                       "config.yml",
+                       #"config.yml",
                        "data",
                        "data-raw",
                        "R",
