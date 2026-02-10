@@ -10,14 +10,14 @@
 #' should be replaced with an absolute path.
 #' @param name name of the new R project (and folder)
 #' @return A new project will be set up at the specified location (path + name) by the user.
-#' @author Florian Schwarz
+#' @author Florian Schwarz, Fabian Eichelmann
 #' @import renv
 #' @import fs
 #' @import usethis
 #' @export
 #'
 
-initProject <- function(path = "home", name = NULL){
+initialize_project <- function(path = "home", name = NULL){
 
   if(is.null(name)){
     stop("Please provide a path name for the project to be created.", call. = FALSE)
