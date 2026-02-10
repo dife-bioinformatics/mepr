@@ -78,8 +78,8 @@ initialize_project <- function(path = "home", name = NULL){
   #### could be used to determine the theme in ggplot e.g.
   #### could also be used in connection with how to flexibly merge plots together into one figure
   #### set fixed fonts throughout
-  file.copy(from = find_script("utils/config.yml"),
-            to = paste0(new_project_path, "/config.yml"))
+  # file.copy(from = find_script("utils/config.yml"),
+  #           to = paste0(new_project_path, "/config.yml"))
 
 
   #### modify .gitignore file
@@ -104,12 +104,13 @@ initialize_project <- function(path = "home", name = NULL){
 
   #### initiate and fill standard .Renviron file
 
-  r_environ_lines <- c("R_CONFIG_ACTIVE = 'default'")
+  # r_environ_lines <- c("R_CONFIG_ACTIVE = 'default'")
+  #
+  # usethis::write_over(path = paste0(new_project_path, "/.Renviron"),
+  #                     lines = r_environ_lines)
 
-  usethis::write_over(path = paste0(new_project_path, "/.Renviron"),
-                      lines = r_environ_lines)
-
-  r_profile_lines <- c("source(\"renv/activate.R\")")
+  r_profile_lines <- c("source(\"renv/activate.R\")",
+                       "purrr::walk(fs::dir_ls(here::here(\"R/utils\")), ~source(.))")
 
   usethis::write_over(path = paste0(new_project_path, "/.Rprofile"),
                       lines = r_profile_lines)
