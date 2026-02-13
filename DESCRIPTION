@@ -33,5 +33,6 @@ Suggests:
     testthat (>= 3.0.0),
     stringr, 
     config,
-    here
+    here,
+    rjson
 Config/testthat/edition: 3

@@ -38,7 +38,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config
+          extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson
           needs: check
 
       - name: Create .Renviron file

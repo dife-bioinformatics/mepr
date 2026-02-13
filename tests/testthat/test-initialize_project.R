@@ -45,6 +45,20 @@ test_that("project setup structure", {
   testthat::expect_true(all(gitignore_lines_expected %in% gitignore_lines_created))
 
 
+  #### testing whether important packages have been written to the renv.lock file
+
+  renv_lock_file <- paste0(tmp_path_to_proj, "/", "renv.lock")
+  renv_lock_data <- rjson::fromJSON(paste(readLines(renv_lock_file), collapse = ""))[[2]]
+  installed_package_names <- names(renv_lock_data)
+
+  renv_lock_expected <- c("survival",
+                          "tidyverse",
+                          "here",
+                          "pak")
+
+  testthat::expect_true(all(renv_lock_expected %in% installed_package_names))
+
+
   #### Testing whether the function stops when no name has been provided
   error_message <- testthat::expect_error(mepr::initialize_project(path = tmp_path))
 
