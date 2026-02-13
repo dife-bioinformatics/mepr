@@ -70,11 +70,15 @@ test_that("project setup structure", {
 
   #### Testing whether the function stops when it would overwrite a folder directory
   error_message2 <- testthat::expect_error(mepr::initialize_project(path = tmp_path, name = test_name))
+  error_message2_message <- stringr::str_replace_all(string = error_message2$message,
+                                                     pattern = "\\n",
+                                                     replacement = "")
+  error_message2_message <- stringr::str_squish(error_message2_message)
 
   if(cfg_dir_overwrite){
 
     #### Testing that the error message is consistent
-    testthat::expect_equal(error_message2$message,
+    testthat::expect_equal(error_message2_message,
                            paste0("The path and name you have provided would overwrite an existing directory (", tmp_path_to_proj , "). Setup aborted."))
 
   }
