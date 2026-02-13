@@ -23,9 +23,10 @@ Depends:
 Imports:
     renv,
     usethis,
-    fs
+    fs,
+    lifecycle
 Encoding: UTF-8
-Roxygen: list(markdown = FALSE)
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 URL: https://github.com/dife-bioinformatics/AnalysisMEP
 BugReports: https://github.com/dife-bioinformatics/AnalysisMEP/issues
