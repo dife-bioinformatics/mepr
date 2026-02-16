@@ -161,9 +161,10 @@ release notes, creates a draft release)
 
 The following percentages of code were covered during testing:
 
-![find_script](status/badges/find_script_badge.svg)
 
-![initProject](status/badges/initProject_badge.svg)
+![initialize_project](status/badges/initialize_project_badge.svg)
+
+![int_find_script](status/badges/int_find_script_badge.svg)
 
 
 End of code coverage report.
