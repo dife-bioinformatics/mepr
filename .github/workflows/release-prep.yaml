@@ -2,9 +2,8 @@
 
 name: Release
 on:
-  pull_request:
-    branches: [main]
-    types: [closed]
+  repository_dispatch:
+    types: [semantic-release]
 
 jobs:
   release:
