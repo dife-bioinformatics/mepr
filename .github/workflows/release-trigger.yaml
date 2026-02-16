@@ -21,4 +21,4 @@ jobs:
         with:
           token: ${{ secrets.MEP_Package_Update }}
           repository: dife-bioinformatics/mepr
-          event-type: semantic_release
+          event-type: semantic-release
