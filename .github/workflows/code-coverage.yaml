@@ -12,7 +12,7 @@ jobs:
     if: "!startsWith(github.head_ref, 'main')"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.MEP_Package_Update }}
       - uses: r-lib/actions/setup-r@v2

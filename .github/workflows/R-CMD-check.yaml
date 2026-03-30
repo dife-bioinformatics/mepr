@@ -26,7 +26,15 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - name: install more ubuntu libraries for R packages
+        if: matrix.config.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update && sudo apt-get install \
+          libfontconfig1-dev \
+          libfreetype6-dev
+        shell: bash
 
       - uses: r-lib/actions/setup-pandoc@v2
 
