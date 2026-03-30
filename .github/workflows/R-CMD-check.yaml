@@ -33,7 +33,9 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install \
           libfontconfig1-dev \
-          libfreetype6-dev
+          libfreetype6-dev \
+          libharfbuzz-dev \
+          libfribidi-dev
         shell: bash
 
       - uses: r-lib/actions/setup-pandoc@v2
