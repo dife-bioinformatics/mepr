@@ -39,8 +39,7 @@ jobs:
           libpng-dev \
           libtiff5-dev \
           libjpeg-dev \
-          libwebp-dev \
-          libwebpmux-dev
+          libwebp-dev
 
         shell: bash
 
