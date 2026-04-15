@@ -26,13 +26,14 @@ This pull request template is primarily used for PR's into the dev branch.
 - [ ] Changes to functions: Have you added/modified unit tests? 
 - [ ] Changes to functions: If not (s.a.), can you add a minimal reproducible example (Input - Function Call - Output)
 - [ ] Changes to functions: Have you installed the package locally and tried running it? 
-- [ ] Run `devtools::check` (or use GUI equivalent) and check it passes without errors or warnings
+- [ ] Run `rcmdcheck::rcmdcheck(args = c("--no-manual", "--no-build-vignettes"))` and check that all the tests are passed & no warnings given
 
 ## Instructions & checklist for PR reviewers
 - [ ] Check that the continuous integration checks pass on the pull request branch 
 - [ ] Checkout the pull request in a separate branch
 - [ ] Run `devtools::build()` and check it builds without errors
-- [ ] Run `devtools::check()` and check that all the tests are passed & no warnings given
-- [ ] After running `devtools::check()`, are there any notes that can be easily resolved?
+- [ ] Run `rcmdcheck::rcmdcheck(args = c("--no-manual", "--no-build-vignettes"))` and check that all the tests are passed & no warnings given
+- [ ] Alternatively, run `devtools::test()` and check that the tests are passing
+- [ ] After running the check, are there any notes that can be easily resolved?
 - [ ] Review the code and suggest any changes
 - [ ] Are all mandatory roxygen2 fields declared?
