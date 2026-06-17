@@ -39,7 +39,12 @@ jobs:
           libpng-dev \
           libtiff5-dev \
           libjpeg-dev \
-          libwebp-dev
+          libwebp-dev \
+          libssl-dev \
+          libcurl4-openssl-dev \
+          unixodbc-dev \
+          libxml2-dev \
+          libmariadb-dev
 
         shell: bash
 
