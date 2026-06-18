@@ -129,8 +129,8 @@ initialize_project <- function(path = "home", name = NULL) {
 
 
   r_profile_lines <- c("source(\"renv/activate.R\")",
-                       "purrr::walk(fs::dir_ls(here::here(\"R/utils\")), ~source(.))",# nolint
-                       "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/rhel9/latest'))")
+                       "purrr::walk(fs::dir_ls(here::here(\"R/utils\")), ~source(.))") # nolint
+
 
   usethis::write_over(path = paste0(new_project_path,
                                     "/.Rprofile"),
