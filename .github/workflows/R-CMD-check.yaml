@@ -44,7 +44,8 @@ jobs:
           libcurl4-openssl-dev \
           unixodbc-dev \
           libxml2-dev \
-          libmariadb-dev
+          libmariadb-dev \
+          gcc
 
         shell: bash
 
