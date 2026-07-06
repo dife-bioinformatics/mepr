@@ -17,8 +17,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-latest,   r: '4.3.0'}
+          - {os: debian-latest,   r: 'release'}
+          - {os: debian-latest,   r: '4.3.0'}
           - {os: windows-latest,   r: 'release'}
 
     env:
@@ -28,8 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: install more ubuntu libraries for R packages
-        if: matrix.config.os == 'ubuntu-latest'
+      - name: install more debian libraries for R packages
+        if: matrix.config.os == 'debian-latest'
         run: |
           sudo apt-get update && sudo apt-get install \
           libfontconfig1-dev \
@@ -44,7 +44,8 @@ jobs:
           libcurl4-openssl-dev \
           unixodbc-dev \
           libxml2-dev \
-          libmariadb-dev
+          libmariadb-dev \
+          gcc
 
         shell: bash
 
@@ -61,8 +62,8 @@ jobs:
           extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson, any::callr
           needs: check
 
-      - name: Create .Renviron file for Ubuntu
-        if: matrix.config.os == 'ubuntu-latest'
+      - name: Create .Renviron file for debian
+        if: matrix.config.os == 'debian-latest'
         run: |
           touch .Renviron
           echo R_CONFIG_ACTIVE = "github" >> .Renviron
@@ -83,7 +84,7 @@ jobs:
 
   workflow-keepalive:
     if: github.event_name == 'schedule'
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     permissions:
       actions: write
     steps:
