@@ -136,6 +136,7 @@ initialize_project <- function(path = "home", name = NULL) {
                       lines = r_profile_lines)
 
   renv::init(project = new_project_path,
-             load = FALSE)
+             load = FALSE,
+             restart = FALSE)
 
 }
