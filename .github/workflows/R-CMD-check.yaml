@@ -42,10 +42,7 @@ jobs:
           libwebp-dev \
           libssl-dev \
           libcurl4-openssl-dev \
-          unixodbc-dev \
-          libxml2-dev \
-          libmariadb-dev \
-          gcc
+          libxml2-dev
 
         shell: bash
 
@@ -54,12 +51,11 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
-          http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson, any::callr
+          extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson
           needs: check
 
       - name: Create .Renviron file for ubuntu
