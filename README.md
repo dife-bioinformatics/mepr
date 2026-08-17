@@ -1,7 +1,7 @@
 # AnalysisMEP R package
 
 ![Last_Check](status/badges/check_lasttest_badge.svg)
-[![R-CMD-check](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=dev)](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 

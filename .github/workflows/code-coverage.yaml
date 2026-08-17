@@ -1,4 +1,4 @@
-#### GitHub Actions to check whether package can be built as is
+#### Updates code coverage badges and README after merging to dev
 
 name: Code Coverage
 
